@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatNumber, cn } from "@/lib/utils"
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE!
+const API_BASE = ""
 
 interface BookItem {
   bookId: string
