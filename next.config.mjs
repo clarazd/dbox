@@ -16,7 +16,7 @@ const nextConfig = {
     return [
       {
         source: "/api_proxy/:path*",
-        destination: "http://localhost:3000/api/:path*", 
+        destination: "https://dramabox-jade.vercel.app/api/:path*", 
       },
     ];
   },
