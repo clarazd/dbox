@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatNumber, cn } from "@/lib/utils"
 
-const API_BASE = "";
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE!
 
 interface BookItem {
   bookId: string
@@ -60,7 +60,7 @@ export function SearchView({ initialQuery = "", autoFocus = false, onClose, isDi
       try {
         const controller = new AbortController()
         const timeout = setTimeout(() => controller.abort(), 8000)
-        const res = await fetch(url, { signal: controller.signal })
+        const res = await fetch(API_BASE + url, { signal: controller.signal })
         clearTimeout(timeout)
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return await res.json()
